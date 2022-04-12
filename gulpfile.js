@@ -8,4 +8,12 @@ function task() {
     .pipe(gulp.dest('./dist/css/'));
 }
 
+function watch() {
+  task();
+  return gulp.watch('./src/sass/**/*.scss', function() {
+    return task();
+  });
+}
+
 exports.default = task;
+exports.watch = watch;
