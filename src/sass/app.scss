@@ -1,4 +1,82 @@
-.hoge {
-  width: 100px;
+@charset "UTF-8";
+@import '_variable';
+@import 'reset';
+@import 'mixin';
+
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 100px;;
+  background-color: $navy;
+  position: relative;
+
+  &-contents {
+    list-style: none;
+    background-color: $white;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+  }
+
+  &-content {
+    @each $class in $classNames {
+      $index_key: index($classNames, $class); // indexの取得
+      $color: nth($buttonColor, $index_key);
+      &.is-#{$class} {
+        @include smallBox($color);
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.main {
+  display: flex;
+
+  &-side {
+    width: 150px;
+    height: 250px;
+    background-color: $green;
+  }
+
+  &-section {
+    width: 250px;
+    height: 250px;
+    background-color: $red;
+    position: relative;
+
+    &-contents {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      list-style: none;
+    }
+
+    &-content {
+      @each $class in $classNames {
+        $index_key: index($classNames, $class); // indexの取得
+        $color: nth($buttonColor, $index_key);
+        &.is-#{$class} {
+          @include largeBox($color);
+        }
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.footer {
   height: 100px;
+  background-color: $brown;
 }

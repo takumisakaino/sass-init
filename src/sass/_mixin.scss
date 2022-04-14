@@ -1,0 +1,15 @@
+@mixin smallBox($color) {
+  width: 40px;
+  height: 40px;
+  background-color: $color;
+  margin-left: 10px;
+}
+
+@mixin largeBox($color) {
+  width: 140px;
+  height: 40px;
+  background-color: $color;
+  border: 5px solid $white;
+  margin-top: 10px;
+}
+

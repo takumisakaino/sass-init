@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/takumisakaino/sass-init#readme",
   "devDependencies": {
-    "-": "0.0.1",
+    "-": "^0.0.1",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "install": "^0.13.0",
